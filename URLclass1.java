@@ -18,8 +18,9 @@ public class URLclass1{
 			}*/
 			while(input.hasNextLine()){
 				String line=input.nextLine();
-				int count=1;
-				System.out.println(count+line);
+				int count=0;
+				count+=line.length()
+				System.out.println(count);
 				count++;
 			}
 		}catch(IOException e){
