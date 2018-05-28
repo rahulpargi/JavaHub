@@ -9,6 +9,11 @@ public class Fileper{
 		boolean exists=file.exists();
 
 		if(exists==true){
+			//changing file permission
+			file.setExecutable(true);
+			file.setReadable(true);
+			file.setWritable(false);
+			System.out.println("File Permission changed");
 			System.out.println("Executable: "+file.canExecute());
 			System.out.println("Readable: "+file.canRead());
 			System.out.println("Writable :"+file.canWrite());
