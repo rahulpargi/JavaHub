@@ -30,15 +30,34 @@ class Generics{
 
 }
 }*/
-class Generics{
-	//generic method
-	static <T> void genericDisplay(T element){
-		System.out.println(element.getClass().getName()+"="+element);
+// class Generics{
+// 	//generic method
+// 	static <T> void genericDisplay(T element){
+// 		System.out.println(element.getClass().getName()+"="+element);
 
-	}
+// 	}
+// 	public static void main(String[] args){
+// 		genericDisplay(11);
+// 		genericDisplay("hello");
+// 		genericDisplay(1.0);
+// 	}
+// }
+
+//Using generics to convert run time exceptions into compiler time exception
+
+import java.util.*;
+
+class Generics{
 	public static void main(String[] args){
-		genericDisplay(11);
-		genericDisplay("hello");
-		genericDisplay(1.0);
+		ArrayList <String> a1=new ArrayList<String> ();
+		a1.add("Sachin");
+		a1.add("rahul");
+		//compiler will not allow this
+		a1.add(90);
+		String a=(String)a1.get(0);
+		String a=(String)a1.get(1);
+		String a=(String)a1.get(2);
+
+
 	}
 }
