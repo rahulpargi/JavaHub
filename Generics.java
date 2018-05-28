@@ -1,27 +1,32 @@
-//Program to show working of user defined generic class
- 
-
-class Test<T>
-{
-	//an object of type T
-	T obj;
-	Test(T obj){
-		this.obj=obj;//constructor
-
-		}
-		public T getObject(){
-			return this.obj;
+class Test<T,U>{
+	//An object of type T
+	T obj1;
+	U obj2;
+	Test(T obj1,U obj2){
+		this.obj1=obj1;
+		this.obj2=obj2;
 	}
-
+	/*public T getObject(){
+		return this.obj1;
+		re
+	}*/
+	public void print(){
+		System.out.println(obj1);
+		System.out.println(obj2);
+	}
 }
-//Driver class to test above
 class Generics{
 	public static void main(String[] args){
-		//instance of Integer type
-		Test<Integer> iObj=new Test<Integer>(15);
-		System.out.println(iObj.getObject());
-		//instance of string type
-		Test<String> sObj=new Test<String>("Sample string");
-		System.out.println(sObj.getObject());
-	}
+	//instance og Integer type
+
+	/*Test<Integer> iobj=new Test<Integer>(15);
+	System.out.println(iobj.getObject());
+	//instance of string type
+	Test<String> sobj=new Test<String>("Test");
+	System.out.println(sobj.getObject());
+*/
+	Test<String,Integer> obj=new Test<String,Integer>("test",2234);
+	obj.print();
+
+}
 }
