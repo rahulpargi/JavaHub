@@ -31,7 +31,7 @@ class Test{
 public class Assignment1
 {
 
-  public static void main(String[] args) throws IOException{
+  public static void main(String[] args)throws IOException,IllegalArgumentException {
     //Reading the url from the file
     File file =new File("C:\\Users\\rahul\\OneDrive - University of Central Missouri\\Java\\test.txt");
     Scanner sc = new Scanner(file);
@@ -93,6 +93,8 @@ public class Assignment1
     
 
     catch (IOException ex) {
+       System.out.println("Error: " + ex.getMessage());
+     }catch (IllegalArgumentException ex) {
        System.out.println("Error: " + ex.getMessage());
      }
     
