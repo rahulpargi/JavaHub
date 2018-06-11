@@ -13,6 +13,10 @@ public class Sos{
 		System.out.println("Server is waiting for client request");
 		Socket s=ss.accept();
 		System.out.println("Connected");
-		
+		//fetching data
+		BufferedReader br=new BufferedReader(new InputStreamReader(s.getOutputStream()));
+		String str=br.readLine();
+		System.out.println("Client data "+str);
+
 	}
 }
