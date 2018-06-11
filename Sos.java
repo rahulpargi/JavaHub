@@ -1,4 +1,4 @@
-import java.net.io;
+
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.InputStreamReader;
@@ -14,9 +14,23 @@ public class Sos{
 		Socket s=ss.accept();
 		System.out.println("Connected");
 		//fetching data
-		BufferedReader br=new BufferedReader(new InputStreamReader(s.getOutputStream()));
+		BufferedReader br=new BufferedReader(new InputStreamReader(s.getInputStream()));
 		String str=br.readLine();
-		System.out.println("Client data "+str);
+		int a=Integer.parseInt(str);
+		int square=(a*a);
+
+
+		System.out.println("Client data "+square);
+		//int firstName=str.substring(0,4);
+		//coverts data into stream format
+		OutputStreamWriter os=new OutputStreamWriter(s.getOutputStream());
+		//print formatted data
+		PrintWriter out=new PrintWriter(os);
+		out.println(str);
+		//forcefully send data as the default buffer size is 512 bytes
+		out.flush();
+
+
 
 	}
 }

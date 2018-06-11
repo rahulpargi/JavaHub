@@ -10,7 +10,7 @@ public class Soc{
 		String ip="localhost";
 		int port=2222;
 		Socket s=new Socket(ip,port);
-		String str="Test";
+		int str=12;
 		//coverts data into stream format
 		OutputStreamWriter os=new OutputStreamWriter(s.getOutputStream());
 		//print formatted data
@@ -18,6 +18,11 @@ public class Soc{
 		out.println(str);
 		//forcefully send data as the default buffer size is 512 bytes
 		out.flush();
+		//fetching data
+		BufferedReader br=new BufferedReader(new InputStreamReader(s.getInputStream()));
+		String strr=br.readLine();
+		int ans=Integer.parseInt(strr);
+		System.out.println(ans);
 
 
 
